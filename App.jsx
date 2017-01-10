@@ -9,7 +9,7 @@ class Card extends React.Component {
     this.state = {
       title: this.props.title,
       date: this.props.date,
-      image: this.props.image
+      style: this.props.style
     }
   }
 
@@ -17,7 +17,7 @@ class Card extends React.Component {
   render() {
     return (
       <div className="col-4">
-        <div className="card">
+        <div style={this.state.style} className="card">
           <div className="card-info">
             <h5>{this.state.title}</h5>
             <p>{this.state.date}</p>
@@ -28,18 +28,15 @@ class Card extends React.Component {
   }
 }
 
-function formatDate(rawDate) {
-  return rawDate.slice(0,10)
-}
+let formatDate = (rawDate) => {return rawDate.slice(0,10)}
 
-function dateFilter(date) {
+let dateFilter = (date) => {
   if(Date.parse(date) > today) {
     return true
   }
 }
 
 class App extends React.Component {
-
 
   constructor(props) {
     super(props);
@@ -54,10 +51,14 @@ class App extends React.Component {
           if(activity.calEvent.thumbImage && dateFilter(activity.calEvent.startDate)){
             return (
               <Card
-              title={activity.calEvent.eventName}
-              key={index}
-              date={formatDate(activity.calEvent.startDate)}
-              image={`http://app.toronto.ca/${activity.calEvent.thumbImage.url}`}
+                title={activity.calEvent.eventName}
+                key={index}
+                date={formatDate(activity.calEvent.startDate)}
+                style={{
+                  'backgroundImage':`url('http://app.toronto.ca/${activity.calEvent.thumbImage.url}')`,
+                  'backgroundRepeat':'no-repeat',
+                  'backgroundSize':'cover'
+                }}
               />
             )
           }

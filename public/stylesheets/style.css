@@ -2,5 +2,20 @@
   border: 1px solid black;
   height: 150px;
   width: 100%; }
+  .card .card-info {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.48);
+    position: relative;
+    bottom: 27px;
+    color: white; }
+    .card .card-info h5 {
+      color: inherit; }
+    .card .card-info p {
+      position: relative;
+      bottom: 29px;
+      font-size: 14px;
+      color: inherit; }
 
 /*# sourceMappingURL=style.css.map */
