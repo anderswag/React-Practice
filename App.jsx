@@ -35,6 +35,8 @@ class Card extends React.Component {
   }
 
 
+
+
   render() {
     return (
       <a href={this.state.url}>
