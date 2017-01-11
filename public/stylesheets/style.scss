@@ -1,5 +1,7 @@
 $testbox: 1px solid black;
-$primary-color: #bf4040;
+$primary-color: #D64541;
+// $primary-color: #D24D57;
+
 // $font-title: 'Quicksand', sans-serif;
 $font-title: 'Pacifico', cursive;
 
@@ -12,6 +14,7 @@ body {
     height: 100%;
     overflow: auto;
     background-color:$primary-color;
+    width:100%;
 }
 
 .card {
