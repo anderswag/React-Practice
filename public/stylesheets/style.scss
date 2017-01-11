@@ -26,20 +26,30 @@ body {
     position: relative;
     bottom: 27px;
     color:white;
+    transition: 0.3s;
     h5{
       color:inherit;
+      display:block;
+      width:100%;
+      transition: 0.3s;
     }
     p{
       position:relative;
       bottom:29px;
       font-size:14px;
       color:inherit;
+      display:block;
+      width:100%;
+      transition: 0.3s;
     }
   }
 }
 
 .card-info:hover {
   background-color:rgba(0, 0, 0, 0);
+  h5,p{
+    background-color:rgba(0, 0, 0, 0.48);
+  }
 }
 
 .nav-bar{

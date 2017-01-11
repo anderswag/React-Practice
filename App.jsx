@@ -1,6 +1,18 @@
 import React from 'react';
 import * as Data from './torontoData.js';
 
+// let sortedDate = Data.sort(function(a, b) {
+//   if(Date.parse(a.default.data.calEvent.startDate) > (Date.parse(b.default.data.calEvent.startDate))) {
+//     return 1;
+//   } else {
+//     return -1;
+//   }
+// });
+
+let sortedDate = Data.default.data.sort(function(a, b) {
+    return Date.parse(a.calEvent.startDate) - Date.parse(b.calEvent.startDate);
+  });
+
 let today = Date.now()
 
 let formatDate = (rawDate) => {return rawDate.slice(0,10)}
@@ -57,7 +69,7 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {activities: Data};
+    this.state = {activities: sortedDate};
   }
 
   render() {
@@ -66,7 +78,7 @@ class App extends React.Component {
         <Navbar />
         <div className="container">
           <div className="row">
-          {this.state.activities.default.data.map(function(activity,index){
+          {this.state.activities.map(function(activity,index){
             if(activity.calEvent.thumbImage && dateFilter(activity.calEvent.startDate)){
               return (
                 <Card

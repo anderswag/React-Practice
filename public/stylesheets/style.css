@@ -18,17 +18,26 @@ body {
     background-color: rgba(0, 0, 0, 0.48);
     position: relative;
     bottom: 27px;
-    color: white; }
+    color: white;
+    transition: 0.3s; }
     .card .card-info h5 {
-      color: inherit; }
+      color: inherit;
+      display: block;
+      width: 100%;
+      transition: 0.3s; }
     .card .card-info p {
       position: relative;
       bottom: 29px;
       font-size: 14px;
-      color: inherit; }
+      color: inherit;
+      display: block;
+      width: 100%;
+      transition: 0.3s; }
 
 .card-info:hover {
   background-color: transparent; }
+  .card-info:hover h5, .card-info:hover p {
+    background-color: rgba(0, 0, 0, 0.48); }
 
 .nav-bar {
   height: 80px;
